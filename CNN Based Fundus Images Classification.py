@@ -26,7 +26,6 @@ import matplotlib.pyplot as plt
 from skimage.color import rgb2gray
 import cv2
 
-
 #set the train and test paths
 train_path = '/content/drive/MyDrive/RIM-ONE/train'
 test_path = '/content/drive/MyDrive/RIM-ONE/test' 
@@ -94,14 +93,6 @@ train_datagen = ImageDataGenerator( rotation_range=10,
                                     height_shift_range=0.1)
 
 validation_datagen= ImageDataGenerator()
-
-
-
-
-
-
-
-
 
 train_generator.class_indices
 validation_generator.class_indices
@@ -434,5 +425,5 @@ plt.xlim([0, 1])
 plt.ylim([0, 1])
 plt.ylabel('True Positive Rate')
 plt.xlabel('False Positive Rate')
-#plt.savefig("/content/drive/MyDrive/RIM-ONE/diagrams/" + "Inceptionv3.svg")
+plt.savefig("/content/drive/MyDrive/RIM-ONE/diagrams/" + "Inceptionv3.svg")
 plt.show()
