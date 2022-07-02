@@ -45,5 +45,5 @@ train_datagen = ImageDataGenerator( rotation_range=10,
                                     width_shift_range=0.1,
                                     height_shift_range=0.1)
 
-test_datagen = ImageDataGenerator()
+validation_datagen= ImageDataGenerator()
 
