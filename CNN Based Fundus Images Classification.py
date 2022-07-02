@@ -25,3 +25,16 @@ from sklearn.model_selection import train_test_split
 #set the train and test paths
 train_path = '/content/drive/MyDrive/RIM-ONE/train'
 test_path = '/content/drive/MyDrive/RIM-ONE/test' 
+
+train_classes = os.listdir(train_path)
+train_batch_size = 8
+test_batch_size = 8
+train_n = 4233 # number of training images
+test_n = 932 # number of testing images
+train_steps = train_n//train_batch_size
+test_steps = test_n//test_batch_size
+input_shape = (299, 299, 3) # input image sizes for Inceptionv3
+num_classes = len(train_classes) # number of classes
+epochs = 150
+
+
