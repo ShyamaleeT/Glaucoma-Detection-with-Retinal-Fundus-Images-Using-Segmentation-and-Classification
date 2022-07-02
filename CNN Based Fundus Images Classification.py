@@ -31,6 +31,14 @@ train_path = '/content/drive/MyDrive/RIM-ONE/train'
 test_path = '/content/drive/MyDrive/RIM-ONE/test' 
 validation_path = '/content/drive/MyDrive/RIM-ONE/validation'
 
+#Train,test and Validation Spliit
+X_train, X_test, y_train, y_test 
+    = train_test_split(X, y, test_size=0.3, random_state=1)
+
+ X_train, X_val, y_train, y_val 
+    = train_test_split(X_train, y_train, test_size=0.42, random_state=1) # 0.42 x 0.7 = 0.3
+
+
 train_classes = os.listdir(train_path)
 train_batch_size = 8
 test_batch_size = 8
