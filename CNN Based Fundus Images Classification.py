@@ -141,17 +141,6 @@ checkpoint = ModelCheckpoint("./checkpoints/InceptionV3.hdf5",
 callbacks_list.append(checkpoint)
 
 #Apply optimizer
-sgd = optimizers.SGD(learning_rate=0.0001, momentum=0.9)
-
-InceptionV3_x_final_model.compile(optimizer=sgd, loss='binary_crossentropy',metrics=['accuracy'])
-
-model_history = InceptionV3_x_final_model.fit_generator(train_crops, 
-                                    validation_data=validation_generator, 
-                                    validation_steps=test_steps, 
-                                    steps_per_epoch=train_steps, 
-                                    epochs=epochs,
-                                    callbacks=[callbacks_list])
-
 adam = optimizers.Adam(learning_rate=0.0001, name='Adam')
 
 InceptionV3_x_final_model.compile(optimizer=adam, loss='binary_crossentropy',metrics=['accuracy'])
