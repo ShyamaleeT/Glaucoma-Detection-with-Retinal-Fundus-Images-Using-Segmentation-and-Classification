@@ -37,8 +37,7 @@ X_train, X_test, y_train, y_test
 
  X_train, X_val, y_train, y_val 
     = train_test_split(X_train, y_train, test_size=0.42, random_state=1) # 0.42 x 0.7 = 0.3
-
-
+    
 train_classes = os.listdir(train_path)
 train_batch_size = 8
 test_batch_size = 8
@@ -75,19 +74,14 @@ updated_lab_img2 = cv2.merge((clahe_img,a,b))
 
 #Convert LAB image back to color (RGB)
 CLAHE_img = cv2.cvtColor(updated_lab_img2, cv2.COLOR_LAB2BGR)
-
 cv2_imshow(img)
 cv2_imshow(CLAHE_img)
 
 #Apply Dilation Method
 img = cv2.imread('image',0)
 _, mask = cv2.threshold(img, 255, 255, cv2.THRESH_BINARY_INV)
-
 kernal = np.ones((10,10), np.uint8)
-
 dilation = cv2.dilate(mask, kernal, iterations=2)
-
-titles = ['dilation']
 images = [dilation]
 plt.show()
 
