@@ -1,10 +1,6 @@
 #scikit-image (formerly scikits. image) is an open-source image processing library for the Python programming language.
 !pip install scikit-image
 
-#mount google drive
-from google.colab import drive
-drive.mount('/content/drive/')
-
 from keras import optimizers
 from keras.applications.inception_v3 import InceptionV3
 from keras.preprocessing import image
@@ -25,6 +21,10 @@ from skimage import io, filters, feature
 import matplotlib.pyplot as plt
 from skimage.color import rgb2gray
 import cv2
+
+#mount google drive
+from google.colab import drive
+drive.mount('/content/drive/')
 
 #set the train and test paths
 train_path = '/content/drive/MyDrive/RIM-ONE/train'
