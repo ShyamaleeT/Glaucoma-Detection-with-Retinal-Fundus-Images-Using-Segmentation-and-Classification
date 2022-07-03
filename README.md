@@ -50,7 +50,7 @@ For the Segmentation + Classification process, used segmented images generate fr
       
       Validation set - 583 images
       
-Link to the RIM-ONE dataset - 
+Link to the Segmented image dataset - 
       
    
       
