@@ -14,7 +14,8 @@ This study proposes attention UNet models with three Convolutional Neural Netwo
 
 Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9765303
 
-Datasets.
+Datasets
+
 We've used two dataset and spliit the datasets into 70:15:15 (train, test and validation) ratio.
 
 After spliit the dataset
