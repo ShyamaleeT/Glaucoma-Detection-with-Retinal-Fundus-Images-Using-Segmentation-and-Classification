@@ -14,6 +14,9 @@ This study proposes attention UNet models with three Convolutional Neural Netwo
 
 Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9765303
 
+3. Glaucoma Detection with Retinal Fundus Images Using Segmentation and Classification - 
+This study proposes a computational model to segment and classify retinal fundus images for glaucoma detection. Different data augmentation techniques were applied to refrain overfitting while employing several data pre-processing approaches to improve the image quality and achieve high accuracy. The segmentation models are based on an attention U-Net with separate three Convolutional Neural Networks (CNNs) backbones: Inception-v3, Visual Geometry Group19 (VGG19), and Residual Neural Network 50 (ResNet50). The classification models are also employing a modified version of the above three CNN architectures.
+
 Datasets
 
 We've used two dataset and spliit the datasets into 70:15:15 (train, test and validation) ratio.
