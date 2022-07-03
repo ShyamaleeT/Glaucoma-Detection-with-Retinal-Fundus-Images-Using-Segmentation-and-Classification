@@ -88,28 +88,18 @@ X_train_x = input(X_train)
 X_test_x = input(X_test)
 
 # define model-Inceptionv3 Encoder for U-Net
+#for the segmentation, used keras pre-trained inceptionv3, VGG19 and ResNet50 for backbone of the U-Net.
 InceptionV3_model = InceptionV3(input_shape=(299,299,3),weights='imagenet', include_top=False)
-for layer in InceptionV3_model.layers[:249]:
-   layer.trainable = False
-for layer in InceptionV3_model.layers[249:]:
-   layer.trainable = True
-   
-InceptionV3_last_output = InceptionV3_model.output
-InceptionV3_maxpooled_output = Flatten()(InceptionV3_last_output)
-InceptionV3_x = Dense(512, activation='relu')(InceptionV3_maxpooled_output)
-InceptionV3_x = Dropout(0.7)(InceptionV3_x)
-InceptionV3_x = Dense(2, activation='softmax')(InceptionV3_x)
-InceptionV3_x_final_model = Model(inputs=InceptionV3_model.input,outputs=InceptionV3_x)
-InceptionV3_x_final_model.summary()
+InceptionV3_model.summary()
 
 #Replace the UNET encoder with the VGG19 implementation 
-p1 = InceptionV3_x_final_model.get_layer("block1_conv2").output       
-p2 = InceptionV3_x_final_model.get_layer("block2_conv2").output         
-p3 = InceptionV3_x_final_model.get_layer("block3_conv3").output        
-p4 = InceptionV3_x_final_model.get_layer("block4_conv3").output    
+p1 = InceptionV3_model.get_layer("block1_conv2").output       
+p2 = InceptionV3_model.get_layer("block2_conv2").output         
+p3 = InceptionV3_model.get_layer("block3_conv3").output        
+p4 = InceptionV3_model.get_layer("block4_conv3").output    
    
 #Attention U-Net bridge
-p5 = InceptionV3_x_final_model.get_layer("block5_conv3").output 
+p5 = InceptionV3_model.get_layer("block5_conv3").output 
 
 #decoder path
 q1 = decoder_block(p5, p4, 128)                  
@@ -132,26 +122,18 @@ model_history=Inceptionv3_output.fit(X_train_x,
 Inceptionv3_output.save('inceptionv3.hdf5')
 
 # define model-VGG19 Encoder for U-Net
-VGG_19 = VGG19(pooling='avg', weights='imagenet', include_top=False, input_shape=(224,224,3))
-for layers in vgg19_model.layers:
-    layers.trainable=False
+VGG19_model = VGG19(pooling='avg', weights='imagenet', include_top=False, input_shape=(224,224,3))
 
-last_output = vgg19_model.layers[-1].output
-vgg_x = Flatten()(last_output)
-vgg_x = Dense(256, activation = 'relu')(vgg_x)
-vgg_x = Dropout(0.5)(vgg_x)
-vgg_x = Dense(2, activation = 'softmax')(vgg_x)
-vgg19_final_model = Model(vgg19_model.input, vgg_x)
-vgg19_final_model.summary()
+VGG19_model.summary()
 
 #Replace the UNET encoder with the VGG19 implementation 
-x1 = vgg19_final_model.get_layer("block1_conv2").output       
-x2 = vgg19_final_model.get_layer("block2_conv2").output         
-x3 = vgg19_final_model.get_layer("block3_conv3").output        
-x4 = vgg19_final_model.get_layer("block4_conv3").output    
+x1 = VGG19_model.get_layer("block1_conv2").output       
+x2 = VGG19_model.get_layer("block2_conv2").output         
+x3 = VGG19_model.get_layer("block3_conv3").output        
+x4 = VGG19_model.get_layer("block4_conv3").output    
 
 #Attention U-Net bridge
-x5 = vgg19_final_model.get_layer("block5_conv3").output 
+x5 = VGG19_model.get_layer("block5_conv3").output 
 
 #decoder path
 y1 = decoder_block(x5, x4, 128)                  
@@ -175,23 +157,16 @@ VGG_19_output.save('VGG19.hdf5')
 
 # define model-ResNet50 Encoder for U-Net
 ResNet50_model = ResNet50(weights='imagenet', include_top=False, input_shape=(224,224,3))
-for layers in ResNet50_model.layers:
-    layers.trainable=True
-
-resnet50_x = Flatten()(ResNet50_model.output)
-resnet50_x = Dense(256,activation='relu')(resnet50_x)
-resnet50_x = Dense(2,activation='softmax')(resnet50_x)
-resnet50_x_final_model = Model(inputs=ResNet50_model.input, outputs=resnet50_x)
-resnet50_x_final_model.summary()
+ResNet50_model.summary()
 
 #Replace the UNET encoder with the VGG19 implementation 
-u1 = resnet50_x_final_model.get_layer("block1_conv2").output       
-u2 = resnet50_x_final_model.get_layer("block2_conv2").output         
-u3 = resnet50_x_final_model.get_layer("block3_conv3").output        
-u4 = resnet50_x_final_model.get_layer("block4_conv3").output    
+u1 = ResNet50_model.get_layer("block1_conv2").output       
+u2 = ResNet50_model.get_layer("block2_conv2").output         
+u3 = ResNet50_model.get_layer("block3_conv3").output        
+u4 = ResNet50_model.get_layer("block4_conv3").output    
 
 #Attention U-Net bridge
-u5 = resnet50_x_final_model.get_layer("block5_conv3").output 
+u5 = ResNet50_model.get_layer("block5_conv3").output 
 
 #decoder path
 v1 = decoder_block(x5, u4, 128)                  
