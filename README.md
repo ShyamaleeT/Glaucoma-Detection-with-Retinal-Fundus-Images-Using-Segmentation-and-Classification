@@ -38,7 +38,7 @@ Link to the RIM-ONE dataset - https://drive.google.com/drive/folders/18kHb_hPrX_
       
       Validation set - 718 images (Glaucoma:366 images, Normal:352 images)
       
-Link to the RIM-ONE dataset - https://drive.google.com/drive/folders/1uiXUZL5EZ2-F0tE8qWJVdYVRb5oyDm3g?usp=sharing
+Link to the ACRIMA dataset - https://drive.google.com/drive/folders/1uiXUZL5EZ2-F0tE8qWJVdYVRb5oyDm3g?usp=sharing
       
    
       
