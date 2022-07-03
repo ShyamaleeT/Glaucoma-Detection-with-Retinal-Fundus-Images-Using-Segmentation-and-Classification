@@ -1,0 +1,2 @@
+Python version - Python 3.8
+Tensorflow TensorFlow 2.2 or later
