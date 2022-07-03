@@ -2,7 +2,6 @@
 #Datasets --> Apply Preprocessing techniques to the dataset (CLAHE, Median Filtering) --> Apply data augmentation techniques --> Spliit the dataset into 70:15:15 (train, test and validation) ratio
 #--> fed to the data into attention U-Net architecture (as the backbne of the U-Net used pre-trained Inception-v3, VGG19 and ResNet50 architectures)
 
-
 import tensorflow as tf
 import cv2
 import os
