@@ -10,12 +10,12 @@ avoid overfitting and achieve high accuracy. The aim of thispaper is to comparat
 Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9754171
 
 2. Attention U-Net for Glaucoma Identification Using Fundus Image Segmentation - 
-This study proposes attention UNet models with three Convolutional Neural Networks (CNNs) architectures, namely Inception-v3, Visual Geometry Group 19 (VGG19), Residual Neural Network 50 (ResNet50) to segment fundus images.
+This study proposes attention UNet models with three Convolutional Neural Networks (CNNs) architectures, namely Inception-v3, Visual Geometry Group 19 (VGG19), Residual Neural Network 50 (ResNet50) to segment fundus images.
 
 Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9765303
 
 3. Glaucoma Detection with Retinal Fundus Images Using Segmentation and Classification - 
-This study proposes a computational model to segment and classify retinal fundus images for glaucoma detection. Different data augmentation techniques were applied to refrain overfitting while employing several data pre-processing approaches to improve the image quality and achieve high accuracy. The segmentation models are based on an attention U-Net with separate three Convolutional Neural Networks (CNNs) backbones: Inception-v3, Visual Geometry Group19 (VGG19), and Residual Neural Network 50 (ResNet50). The classification models are also employing a modified version of the above three CNN architectures.
+This study proposes a computational model to segment and classify retinal fundus images for glaucoma detection. Different data augmentation techniques were applied to refrain overfitting while employing several data pre-processing approaches to improve the image quality and achieve high accuracy. The segmentation models are based on an attention U-Net with separate three Convolutional Neural Networks (CNNs) backbones: Inception-v3, Visual Geometry Group19 (VGG19), and Residual Neural Network 50 (ResNet50). The classification models are also employing a modified version of the above three CNN architectures.
 
 Datasets
 
@@ -43,7 +43,7 @@ Link to the RIM-ONE dataset - https://drive.google.com/drive/folders/18kHb_hPrX_
       
 Link to the ACRIMA dataset - https://drive.google.com/drive/folders/1uiXUZL5EZ2-F0tE8qWJVdYVRb5oyDm3g?usp=sharing
 
-For the Segmentation + Classification process, used segmented images generate from segmentatin process.
+For the Segmentation + Classification process, used segmented images generate from segmentati0n process.
 
 --> Segmented dataset
 
