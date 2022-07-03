@@ -13,3 +13,25 @@ Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=975
 This study proposes attention UNet models with three Convolutional Neural Networks (CNNs) architectures, namely Inception-v3, Visual Geometry Group 19 (VGG19), Residual Neural Network 50 (ResNet50) to segment fundus images.
 
 Link to the paper:- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9765303
+
+Datasets.
+We've used two dataset and spliit the datasets into 70:15:15 (train, test and validation) ratio.
+
+After spliit the dataset
+--> RIM-ONE dataset
+      Train set - 4512 images (Glaucoma:2232 images, Normal: 2280 images)
+      Test set - 976 images (Glaucoma:480 images, Normal:496 images)
+      Validation set - 970 images (Glaucoma:480 images, Normal:490 images)
+Link to the RIM-ONE dataset - https://drive.google.com/drive/folders/18kHb_hPrX_dxbZTyfbvH9fQmgz3n1I5I?usp=sharing
+
+--> ACRIMA dataset
+      Train set - 3193 images (Glaucoma:1590 images, Normal: 1603 images)
+      Test set - 724 images (Glaucoma:372 images, Normal:352 images)
+      Validation set - 718 images (Glaucoma:366 images, Normal:352 images)
+Link to the RIM-ONE dataset - https://drive.google.com/drive/folders/1uiXUZL5EZ2-F0tE8qWJVdYVRb5oyDm3g?usp=sharing
+      
+   
+      
+      
+
+      
