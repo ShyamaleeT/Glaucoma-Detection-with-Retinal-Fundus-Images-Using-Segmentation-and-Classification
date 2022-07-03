@@ -53,7 +53,7 @@ For the Segmentation + Classification process, used segmented images generate fr
       
       Validation set - 583 images
       
-Link to the Segmented image dataset - 
+Link to the Segmented image dataset - https://drive.google.com/drive/folders/1cQV3WnFSMLsMj-kqOC-wub54DSBe1wGE?usp=sharing
       
    
       
